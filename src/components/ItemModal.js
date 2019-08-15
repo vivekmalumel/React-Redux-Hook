@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Form, FormGroup, Label, Input } from 'reactstrap';
 import {useDispatch} from 'react-redux';
 import {addItem} from '../actions/itemActions'
-import uuid from 'uuid';
 
 const ItemModal=()=>{
 
@@ -19,7 +18,8 @@ const ItemModal=()=>{
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        addNewItem({id:uuid(),name});
+        addNewItem({name});
+        setName('');
         toggle();
     }
     return(
